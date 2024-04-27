@@ -28,7 +28,7 @@ resource "aws_instance" "windows-server-member" {
   count                  = var.windows_domain_member_count
   ami                    = data.aws_ami.windows-server.id
   instance_type          = var.windows_instance_type
-  subnet_id              = aws_subnet.public-subnet.id
+  subnet_id              = "subnet-0d53262df2834baf8"
   vpc_security_group_ids = [aws_security_group.aws-windows-sg.id]
   source_dest_check      = false
   key_name               = aws_key_pair.key_pair.key_name
